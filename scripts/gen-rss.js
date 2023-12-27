@@ -5,7 +5,7 @@ const matter = require('gray-matter')
 
 async function generate() {
   const feed = new RSS({
-    title: 'Your Name',
+    title: 'Dhruv',
     site_url: 'https://yoursite.com',
     feed_url: 'https://yoursite.com/feed.xml'
   })
@@ -17,7 +17,7 @@ async function generate() {
       if (name.startsWith('index.')) return
 
       const content = await fs.readFile(
-        path.join(__dirname, '..', 'pages', 'posts', name)
+        path.join(__dirname, '..', 'pages', name)
       )
       const frontmatter = matter(content)
 
@@ -34,7 +34,7 @@ async function generate() {
 
   allPosts.sort((a, b) => new Date(b.date) - new Date(a.date))
   allPosts.forEach((post) => {
-      feed.item(post)
+    feed.item(post)
   })
   await fs.writeFile('./public/feed.xml', feed.xml({ indent: true }))
 }
