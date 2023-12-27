@@ -3,8 +3,8 @@ import { Html, Head, Main, NextScript } from 'next/document'
 export default function Document() {
   const meta = {
     title: "Dhruv Singhal's Portfolio",
-    description: 'This is my portfolio showcasing my skills, experience and my projects.'
-    // image: 'https://assets.vercel.com/image/upload/q_auto/front/vercel/dps.png'
+    description:
+      'This is my portfolio showcasing my skills, experience and my projects.'
   }
 
   return (
